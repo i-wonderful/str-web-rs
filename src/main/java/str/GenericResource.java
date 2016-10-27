@@ -44,6 +44,13 @@ public class GenericResource {
         return "Hello";
     }
 
+    @GET
+    @Path("/user")
+    @Produces(MediaType.APPLICATION_JSON)
+    public User getUser() {
+        return new User(1, "Ghost");
+    }
+
     /**
      * PUT method for updating or creating an instance of GenericResource
      *

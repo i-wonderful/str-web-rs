@@ -8,12 +8,13 @@
     <name>web-rs Maven Webapp</name>
     <url>http://maven.apache.org</url>
     <dependencies>
-        <dependency>
+<!--        <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>3.8.1</version>
             <scope>test</scope>
-        </dependency>
+        </dependency>-->
+        
         <dependency>
             <groupId>javax.ws.rs</groupId>
             <artifactId>javax.ws.rs-api</artifactId>
@@ -25,7 +26,15 @@
             <artifactId>jersey-container-servlet</artifactId>
             <version>2.23.2</version>
         </dependency>
+        
+        <!-- JSON -->
+        <dependency>
+            <groupId>org.glassfish.jersey.media</groupId>
+            <artifactId>jersey-media-json-jackson</artifactId>
+            <version>2.23.2</version>
+        </dependency>
     </dependencies>
+    
     <build>
         <finalName>str-web-rs</finalName>
     
