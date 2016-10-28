@@ -5,6 +5,7 @@ import javax.ws.rs.core.UriInfo;
 import javax.ws.rs.Produces;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
+import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.PUT;
 import javax.ws.rs.core.MediaType;
@@ -34,8 +35,6 @@ public class GenericResource {
     @GET
     @Produces(MediaType.TEXT_PLAIN)
     public String getXml() {
-        //TODO return proper representation object
-//        throw new UnsupportedOperationException();
         return "Hello";
     }
 
@@ -44,6 +43,16 @@ public class GenericResource {
     @Produces(MediaType.APPLICATION_JSON)
     public User getUser() {
         return new User(1, "Ghost");
+    }
+
+    @POST
+    @Path("/inc")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Integer inc(Integer num) {
+        if (num != null) {
+            return ++num;
+        }
+        return -1;
     }
 
     /**

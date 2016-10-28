@@ -7,6 +7,24 @@
     <version>1.0-SNAPSHOT</version>
     <name>web-rs Maven Webapp</name>
     <url>http://maven.apache.org</url>
+    
+    <properties>
+        <jersey.version>2.23.2</jersey.version>
+    </properties>
+    
+    <!-- Version Management -->
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.glassfish.jersey</groupId>
+                <artifactId>jersey-bom</artifactId>
+                <version>${jersey.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+    
     <dependencies>
 <!--        <dependency>
             <groupId>junit</groupId>
@@ -23,15 +41,13 @@
         
         <dependency>
             <groupId>org.glassfish.jersey.containers</groupId>
-            <artifactId>jersey-container-servlet</artifactId>
-            <version>2.23.2</version>
+            <artifactId>jersey-container-servlet-core</artifactId>
         </dependency>
         
         <!-- JSON -->
         <dependency>
             <groupId>org.glassfish.jersey.media</groupId>
             <artifactId>jersey-media-json-jackson</artifactId>
-            <version>2.23.2</version>
         </dependency>
     </dependencies>
     
